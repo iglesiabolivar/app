@@ -9,8 +9,12 @@ landing-page
 ├── assets
 │   ├── css
 │   │   └── styles.css
+│   ├── files
+│   │   └── iglesia-bolivar.apk
 │   ├── images
 │   │   └── logo.png
+│   ├── js
+│   │   └── script.js
 ├── index.html
 └── README.md
 ```
