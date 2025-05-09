@@ -7,6 +7,7 @@ html {
     box-sizing: inherit;
 }
 
+/* General styles */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -68,9 +69,10 @@ header {
 
 header h1 {
     font-size: 2.6em;
-    background: -webkit-linear-gradient(45deg, #ff6c00, #ffa500);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(45deg, #ff6c00, #ffa500);
+    background-clip: text; /* Propiedad estándar */
+    -webkit-background-clip: text; /* Propiedad con prefijo para compatibilidad con navegadores basados en WebKit */
+    -webkit-text-fill-color: transparent; /* Hace que el texto sea transparente para mostrar el fondo */
     margin-bottom: 5px;
     letter-spacing: 1px;
     font-weight: 700;
@@ -123,6 +125,32 @@ main {
     color: #4c0016;
     margin-bottom: 20px;
     font-size: 0.95em;
+}
+
+/* Spinner styles */
+.spinner {
+    border: 3px solid #fff7eb; /* Color del borde */
+    border-top: 3px solid #ff6c00; /* Color del borde superior */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Ocultar los íconos de Play/Pause cuando el spinner está activo */
+.play-button.loading .play-icon,
+.play-button.loading .pause-icon {
+    display: none;
 }
 
 .play-button {
@@ -203,16 +231,18 @@ footer {
 
 @media (max-width: 600px) {
     body {
+        background: none; /* Elimina el fondo degradado */
         padding: 10px;
         min-height: 100vh;
         align-items: flex-start;
     }
 
     .container {
-        padding: 20px 15px env(safe-area-inset-bottom) 15px;
-        min-height: calc(100vh - 20px);
-        border-radius: 15px;
-        border-top-width: 6px;
+        background-color: transparent; /* Fondo transparente para el contenedor */
+        box-shadow: none; /* Elimina la sombra del contenedor */
+        padding: 20px 15px;
+        border-radius: 0; /* Elimina los bordes redondeados */
+        border-top: none; /* Elimina la línea naranja en la parte superior */
     }
 
     header h1 {
