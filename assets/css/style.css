@@ -1,0 +1,291 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #4c0016 0%, #ff6c00 40%, #ffa500 80%, #fff7eb 100%);
+    background-attachment: fixed;
+    color: #4c0016;
+    min-height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.container {
+    background-color: rgba(255, 247, 235, 0.95);
+    padding: 30px 20px;
+    max-width: 650px;
+    width: 100%;
+    border-top: 8px solid #ff6c00;
+    animation: fadeIn 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 40px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Logo styles */
+.logo-container {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto 10px auto;
+    overflow: hidden;
+    border-radius: 50%; /* Hace que el logo sea redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff7eb; /* Fondo claro para el logo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste al contenedor */
+}
+
+header h1 {
+    font-size: 2.6em;
+    background: -webkit-linear-gradient(45deg, #ff6c00, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #ffa500;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+main {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 20px 0 30px 0;
+    color: #4c0016;
+    font-weight: 300;
+    padding: 0 10px;
+}
+
+.player-container {
+    background-color: #fff7eb;
+    padding: 25px;
+    border-radius: 15px;
+    margin: 0 auto 20px auto;
+    border: 1px solid #ffa500;
+    box-shadow: 0 5px 15px rgba(76, 0, 22, 0.1);
+    max-width: 90%;
+    width: 400px;
+}
+
+.player-container h2 {
+    color: #4c0016;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.6em;
+}
+
+.player-container p {
+    color: #4c0016;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+
+.play-button {
+    background: linear-gradient(145deg, #ff6c00, #ffa500);
+    color: #fff7eb;
+    border: none;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(255, 108, 0, 0.4);
+    margin-bottom: 15px;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+}
+
+.play-button:hover:not(.loading):not(.playing) {
+    background: linear-gradient(145deg, #ffa500, #ff6c00);
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 108, 0, 0.5);
+}
+
+.play-button:hover.playing {
+    background: linear-gradient(145deg, #ff6c00, #4c0016);
+    transform: scale(1.05);
+}
+
+.play-button:active:not(.loading) {
+    transform: scale(0.98);
+    box-shadow: 0 4px 15px rgba(255, 108, 0, 0.3);
+}
+
+.play-button.playing {
+    background: linear-gradient(145deg, #4c0016, #ff6c00);
+    box-shadow: 0 6px 20px rgba(76, 0, 22, 0.4);
+}
+
+/* APK Section */
+.apk-title {
+    color: #ff6c00; /* Naranja */
+    font-weight: 700;
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #ff6c00;
+    color: #fff7eb;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #ffa500;
+}
+
+/* Instructions list spacing */
+.instructions ol {
+    text-align: left;
+    margin: 0 20px; /* Espaciado general */
+}
+
+footer {
+    margin-top: auto;
+    padding: 15px 20px;
+    border-top: 1px solid #ffa500;
+    font-size: 0.85em;
+    color: #4c0016;
+    font-weight: 300;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        min-height: 100vh;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 20px 15px env(safe-area-inset-bottom) 15px;
+        min-height: calc(100vh - 20px);
+        border-radius: 15px;
+        border-top-width: 6px;
+    }
+
+    header h1 {
+        font-size: 2.1em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .logo-container {
+        width: 65px;
+        height: 65px;
+    }
+
+    .description {
+        font-size: 0.9em;
+        padding: 0 5px;
+        margin: 15px 0 25px 0;
+    }
+
+    .player-container {
+        padding: 20px 15px;
+        max-width: none;
+        width: auto;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .player-container h2 {
+        font-size: 1.4em;
+    }
+
+    .play-button {
+        width: 70px;
+        height: 70px;
+    }
+
+    .play-button svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .instructions ol {
+        margin: 0 15px; /* Más espacio en la versión móvil */
+    }
+
+    footer {
+        font-size: 0.75em;
+        padding: 10px 15px calc(10px + env(safe-area-inset-bottom)) 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.9em;
+    }
+
+    .player-container h2 {
+        font-size: 1.3em;
+    }
+
+    .play-button {
+        width: 65px;
+        height: 65px;
+    }
+
+    .play-button svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .instructions ol {
+        margin: 0 40px; /* Más espacio en la versión de escritorio */
+    }
+}

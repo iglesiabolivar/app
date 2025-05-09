@@ -1,0 +1,69 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Radio Iglesia Bolívar</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#64c4ed"> 
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="assets/images/logo.png" alt="Logo Iglesia Bolívar" class="logo-img">
+            </div>
+            <h1>Iglesia Bolívar</h1>
+            <p class="subtitle">Calle Bolívar Nº 381</p>
+        </header>
+
+        <main>
+            <div class="player-container">
+                <h2>Escúchanos en vivo</h2>
+                <p>Presiona el botón para iniciar la transmisión:</p>
+
+                <button id="play-pause-button" class="play-button" aria-label="Reproducir/Pausar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor" class="play-icon">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="currentColor" class="pause-icon" style="display: none;">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </button>
+
+                <audio id="audio-player" preload="none" class="web-player">
+                    <source src="https://stream.zeno.fm/4vd7agek59xtv" type="audio/aac">
+                    Tu navegador no soporta la reproducción de audio en vivo.
+                </audio>
+                 <p id="player-status" class="note">Haz clic en Play para comenzar</p>
+            </div>
+            <div class="apk-container">
+                <h2 class="apk-title">Descarga nuestra App</h2>
+                <p>Haz clic en el botón para descargar la aplicación de la radio:</p>
+                <a href="assets/files/iglesia-bolivar.apk" class="download-button" download>
+                    Descargar APK
+                </a>
+                <div class="instructions">
+                    <h3>Instrucciones de instalación:</h3>
+                    <ol>
+                        <li>Abre <strong>Ajustes</strong> en tu dispositivo.</li>
+                        <li>Selecciona <strong>Seguridad</strong> o <strong>Aplicaciones</strong>.</li>
+                        <li>Activa la opción <strong>Fuentes desconocidas</strong>.</li>
+                        <li>Descarga el archivo APK desde el botón anterior.</li>
+                        <li>Abre el archivo descargado y sigue las instrucciones para instalar la app.</li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; Radio Iglesia Bolívar 2025.</p>
+        </footer>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
